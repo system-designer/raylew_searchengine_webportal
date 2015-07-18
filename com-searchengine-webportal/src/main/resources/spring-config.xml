@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/context
+	      http://www.springframework.org/schema/context/spring-context-3.1.xsd" default-autowire="byName">
+
+    <!--配置文件位置-->
+    <context:property-placeholder location="classpath:init-dev.properties"/>
+
+    <context:component-scan base-package="com.searchengine.webportal"/>
+
+    <!--applicationContextHelper-->
+    <bean id="applicationContextHelper" class="com.searchengine.webportal.common.ApplicationContextHelper"/>
+
+    <!--AppConfig-->
+    <bean id="appConfig" class="com.searchengine.webportal.config.AppConfigImpl">
+        <property name="doraWebApiBaseUrl" value="${dora.webApiBaseUrl}"/>
+    </bean>
+
+    <bean id="cookieUtils" class="com.searchengine.webportal.cookie.CookieUtils">
+        <property name="LoginCookieDomain" value="${login.cookie.domain}"/>
+        <property name="LoginCookieName" value="${login.cookie.name}"/>
+        <property name="RoleTypeCookieName" value="${login.cookie.roleType}"/>
+    </bean>
+    <bean id="requestPathExcluder" class="com.searchengine.webportal.common.RequestPathExcluder">
+        <property name="excludePath" value="${requestPathExcluder.excludePath}"/>
+        <property name="roleExcludePath" value="${requestPathExcluder.roleExcludePath}"/>
+    </bean>
+    <bean id="desSecurity" class="com.searchengine.security.DesSecurityImpl">
+        <constructor-arg index="0" value="${desSecurity.defaultKey}"></constructor-arg>
+        <constructor-arg index="1" value="${desSecurity.messionKey}"></constructor-arg>
+    </bean>
+    <bean id="desSecurityComponent" class="com.searchengine.security.DesSecurityComponent">
+        <property name="desSecurity" ref="desSecurity"></property>
+    </bean>
+
+
+</beans>

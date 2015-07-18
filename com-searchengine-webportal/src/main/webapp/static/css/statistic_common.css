@@ -1,0 +1,50 @@
+.row-border {
+    border-bottom: 2px solid #c6c6c6;
+}
+
+.table th {
+    text-align: center;
+    border-right: 1px solid #c6c6c6;
+    font-size: 14px;
+    background-color: #0599f7;
+}
+
+.table td {
+    text-align: center;
+    font-size: 14.8px;
+}
+
+.field-color {
+    color: #038cda;
+}
+.field-color a{
+    text-decoration: none;
+}
+
+.status {
+    width: 150px;
+    color: #ec5d41
+}
+
+.control-container a {
+    padding-left: 21px;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.control-container .disabled {
+    color: #adacac;
+    cursor: default;
+}
+
+.list-inline a {
+    font-size: 14.8px;
+    color: #000;
+    padding: 0px;
+}
+
+.list-inline a.red {
+    font-size: 14.8px;
+    color: #ff0000;
+}

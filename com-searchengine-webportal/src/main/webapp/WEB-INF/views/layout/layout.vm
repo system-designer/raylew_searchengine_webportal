@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="RayLew">
+    <title>首页 - 爱搜,更好的搜索,更好的自己</title>
+    <link href="/static/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/common.css" rel="stylesheet">
+    $!{header}
+    <script type="text/javascript" src="/static/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/common.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div class="navbar navbar-inverse navbar-top"
+         style="border-top:none;border-bottom-width:2px;border-bottom-color:#03a2ce;border-left:none;border-right: none">
+        <div class="container">
+            <ul class="nav nav-pills pull-right">
+                #if($context)
+                    <li><a href="/">欢迎您，$!{context.loginName}</a></li>
+                    <li><a href="/account/logout">退出</a></li>
+                #else
+                    <li><a href="/account/login">登录</a></li>
+                    <li><a href="/account/register">注册</a></li>
+                #end
+            </ul>
+            <h3 class="muted">
+                <div class="logo">
+                    <a href="/"><img src="/static/img/logo.png" width="256px" height="66px" alt="爱搜logo"/> </a>
+                </div>
+            </h3>
+        </div>
+    </div>
+    #if(${context.roleType}>0)
+        <div class="container" style="padding-top:11px">
+            <div class="col-md-2">
+                <a class="btn btn-primary btn-md" style="font-weight: bold"
+                   href="/statistic/wordList?pageIndex=1&pageSize=10">
+                    <i class='glyphicon glyphicon-th'></i> 数据统计
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-primary btn-md" style="font-weight: bold;margin-left: -30%;"
+                   href="/website/list?domain=&pageIndex=1&pageSize=10">
+                    <i class='glyphicon glyphicon-tag'></i> 网站分析
+                </a>
+            </div>
+            <div class="col-md-8 text-right">
+                <ul class="list-inline">
+                    <li><a href="#" class="red"><i class='glyphicon glyphicon-cog'></i><span
+                            style="margin-left:2px;">DIY</span></a></li>
+                    <li><a href="/about"><i class='glyphicon glyphicon-info-sign'></i><span
+                            style="margin-left:2px;">关于爱搜</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    #end
+
+    <div class="container">
+        <div id="content">
+            $screen_content
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="container">
+        <p class="muted credit">Copyright &copy; 2015 <a target="_blank" href="http://raylew.info">raylew.info</a></p>
+    </div>
+</div>
+</body>
+    $!{footer}
+</html>

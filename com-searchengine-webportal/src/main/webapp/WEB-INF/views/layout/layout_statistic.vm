@@ -1,0 +1,28 @@
+<div class="container" style="margin-top:10px;">
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="img-circle"
+                 src="/static/img/ciku.png"
+                 alt="Generic placeholder image" width="140" height="140">
+            <h2>词库(275719)</h2>
+            <p>搜索引擎对词库的要求很高，词库必须是动态扩展的，在分析网页或者query的时候都需要根据词库来切词。</p>
+            <p><a class="btn btn-default" href="/statistic/wordList?pageIndex=1&pageSize=10" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <img class="img-circle"
+                 src="/static/img/wangye.png"
+                 alt="Generic placeholder image" width="140" height="140">
+            <h2>网页库(9501)</h2>
+            <p>爬虫住区网页后，先将网页存放到网页库，然后处理程序从网页库中调出网页进行分析，并读取网页相关信息入库。</p>
+            <p><a class="btn btn-default" href="/statistic/webPageList?pageIndex=1&pageSize=10" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <img class="img-circle"
+                 src="/static/img/suoyin.png"
+                 alt="Generic placeholder image" width="140" height="140">
+            <h2>索引库(5017805)</h2>
+            <p>爬虫抓取的原始网页数据混乱，需要在原始网页的基础上建立索引，这样能大大提高查询的效率。</p>
+            <p><a class="btn btn-default" href="/statistic/pageWordList?pageIndex=1&pageSize=10" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+</div>

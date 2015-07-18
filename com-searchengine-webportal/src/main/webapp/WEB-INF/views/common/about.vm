@@ -1,0 +1,88 @@
+<link rel="stylesheet" type="text/css" href="/static/css/about/index.css">
+<!-- showcase areas -->
+<div class="showcase-list container">
+    <header class="showcase-title">关键特征</header>
+    <ul class="showcase container nolist">
+        <li class="showcase-item ">
+            <div class="showcase-item-up">
+                <div class="showcase-item-img leftbackimg text-hide">leftimg</div>
+                <div class="showcase-intro showcase-left">轻量级</div>
+            </div>
+            <p class="showcase-item-note">
+                爱搜采用自主开发的爬虫，全文索引引擎Renew和开源的中文分词技术ik-analyzer，一切都说明了轻量级。
+            </p>
+        </li>
+        <li class="showcase-item left">
+            <div class="showcase-item-up">
+                <div class="showcase-item-img middlebackimg text-hide">middleimg</div>
+                <div class="showcase-intro showcase-middle">开源</div>
+            </div>
+            <p class="showcase-item-note">
+                爱搜始终保持开放、分享和包容的态度，代码将托管在开源平台github上，如果你也喜欢搜索引擎，欢迎一起开发。
+            </p>
+        </li>
+        <li class="showcase-item left">
+            <div class="showcase-item-up">
+                <div class="showcase-item-img rightbackimg text-hide">rightimg</div>
+                <div class="showcase-intro showcase-right">可定制，你没见过的优雅</div>
+            </div>
+            <p class="showcase-item-note">
+                爱搜整体采用客户端-服务端分离的SOA和RESTFul架构，方便扩展。爱搜是最轻量级的搜索引擎，可高度定制。来爱搜，用更好的搜索，遇见更好的自己。
+            </p>
+        </li>
+    </ul>
+</div>
+<!-- changelog area -->
+<div class="changelog-list container">
+    <header class="changelog-title container">更新日志</header>
+    <div class="whiteboard" id="logsArea">
+
+    </div>
+</div>
+<script>
+    var logs = [{
+        "name": "爱搜-贝塔1.0",
+        "time": "15-05-08",
+        "details": [
+            "1. 新增语音搜索功能，帮您解放双手；",
+            "2. 修改索引存储策略，倒排索引采用非关系型数据库存储；",
+            "3. 新增网站分析功能，帮助站长科学管理网站；",
+            "4. 搜索排序算法进一步优化，搜索结果采用小批量缓冲式读取；",
+            "5. 调整爱搜页面样式，整体更扁平"
+        ]
+    },
+        {
+            "name": "爱搜-阿尔法3.0",
+            "time": "15-04-10",
+            "details": [
+                "1. 开放注册，爱搜正式面向所有用户；",
+                "2. 新增数据统计功能，对搜索引擎数据一目了然；",
+                "3. 优化搜索排序算法，结合用户搜索统计数据，结果更加稳定可靠；",
+                "4. 新增权限系统，角色分为普通用户、站长和管理员等；",
+                "5. 调整搜索页面样式"
+            ]
+        }, {
+            "name": "爱搜-阿尔法2.0",
+            "time": "15-03-26",
+            "details": [
+                "1. 优化爬虫算法，增强超链分析；",
+                "2. 更改中文分词模块，词表数量提升一个量级；",
+                "3. 更改索引模块，正排索引存入关系型数据库；",
+                "4. 修改搜索排序算法，采用TF-IDF指标；",
+                "5. 调整搜索页面样式"
+            ]
+        }, {
+            "name": "爱搜-阿尔法1.0",
+            "time": "15-02-05",
+            "details": [
+                "1. 搭建整体项目，开发环境intellij，maven项目；",
+                "2. 新增爬虫功能，每天仅能抓取数k网页；",
+                "3. 新增中文分词模块，采用词表切分算法；",
+                "4. 新增索引模块，索引需要临时建立；",
+                "5. 新增搜索界面和交互模块"
+            ]
+        }
+    ]
+</script>
+<script type="text/javascript" src="/static/js/about/index.js"></script>
+<script type="text/javascript" src="/static/js/about/common.js"></script>

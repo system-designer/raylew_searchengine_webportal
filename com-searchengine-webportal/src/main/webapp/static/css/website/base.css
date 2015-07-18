@@ -1,0 +1,254 @@
+html,
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body{
+  width: 100%;
+  background-color: #efefef;
+  font-family: "Biaodian Pro Sans GB","Helvetica Neue",Helvetica,Arial,"Han Heiti GB",sans-serif;
+  font-size: 16px;
+  border: 0;
+  word-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong,b{
+  font-weight: bold;
+  color: #000;
+}
+
+.panel a:link {color: #FFF}     /* 未访问的链接 */     
+.panel a:visited {color: #FFF}  /* 已访问的链接 */
+.panel a:hover {color: #FFF}    /* 鼠标移动到链接上 */ 
+.panel a:active {color: #FFF}   /* 选定的链接 */
+
+.panel{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 30%;
+  width: 30vw;
+  background-color: #1361bf;
+  text-align: center;
+  max-width: 500px;
+}
+
+.wrapper{
+  /* width: 70%; */
+  /* width: 70vw; */
+  margin-left: 30%;
+  margin-left: 30vw;
+  position: relative;
+}
+
+.header{
+  padding: 30px 10% 0px 10%;
+}
+
+#favicon-img{
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  filter:alpha(opacity=0);
+  top: 0;
+  left: 0;
+}
+
+#head-img{
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 100px;
+  border: none;
+}
+
+#tianshu-img{
+  border: none;
+}
+
+.nav{
+  padding: 20% 10% 0px 10%;
+  position: relative;
+}
+
+.nav-in{
+  width: 6em;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+#whiteline{
+  border-left: solid #FFF 15px;
+  border-right: solid #FFF 15px;
+  height: 2.5px;
+  width: 6em;
+  position: absolute;
+  top: 22px;
+  left: -15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation{
+  margin: 0 auto;
+  padding: 10px 0;
+  font-size: 1.3em;
+  color: #FFF;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 999;
+  height: 25px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.myblank{
+  display:-moz-inline-stack;
+  display: inline-block;
+  width: 1.5em;
+  zoom:1;
+  *display:inline;
+}
+
+.myblank2{
+  display:-moz-inline-stack;
+  display: inline-block;
+  width: .2em;
+  zoom:1;
+  *display:inline;
+}
+
+.contact{
+  font-size: 1.5em;
+  color: #FFF;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+}
+
+.contact i{
+  margin: 0 10px;
+}
+
+#mobile-btn:before {
+  cursor: pointer;
+}
+
+.mobile-menu{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: rgba(51, 51, 51, 0.98);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 1.5em;
+  color: #FFF;
+}
+
+.mobile-menu i{
+  position: relative;
+  top: 6px
+}
+
+@media (max-width: 960px), (max-device-width: 768px) and (orientation:portrait){
+  .panel{
+    display: block;
+    position: relative;
+    z-index: 101;
+    padding: 0;
+    background-position: center center;
+    width: 100%;
+    max-width: none;
+  }
+  .wrapper{
+    width: 80%;
+    min-height: 100%;
+    margin:0 auto;
+    min-height:523px;
+  }
+  .header{
+    padding: 40px 10% 10px 10%;
+  }
+  .nav{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 0 0;
+    background: rgba(51, 51, 51, 0.98);
+  }
+  .nav.visible{
+    display: block;
+    z-index: 9999;
+  }
+  .nav-in{
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .navigation{
+    margin: 10px auto;
+    padding: 5px 0;
+    font-size: 1.3em;
+    color: #FFF;
+    border: 1px solid #FFF;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-opacity: 0.8;
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+    filter:alpha(opacity=80);
+    height: initial;
+  }
+  .navigation:hover{
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    filter:alpha(opacity=100);
+  }
+  .contact{
+    display: none;
+  }
+  .mobile-menu{
+    display: block;
+    z-index: 10000;
+  }
+  #whiteline{
+    display: none;
+  }
+}
+
+@media (max-width: 465px), (max-device-width: 465px) and (orientation:portrait){
+  .wrapper{
+    width: 100%;
+  }
+}
+
+@media (min-width: 1667px){
+  .wrapper{
+    margin-left: 500px;
+  }
+  .nav{
+    padding: 30% 10% 0px 10%;
+  }
+}

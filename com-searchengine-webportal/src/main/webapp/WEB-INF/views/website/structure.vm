@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/static/css/website/font-awesome.css">
+<link rel="stylesheet" href="/static/css/website/animate.css">
+<link rel="stylesheet" href="/static/css/website/tree.css">
+
+<div class="container" style="margin-top: 10px;">
+    <div class="col-md-6" style="margin-top: 15px;">
+        <a href="/website/webpagelist?domain=$domain&pageIndex=1&pageSize=20&count=$totalCount">
+            <i class="glyphicon glyphicon-hand-right"></i><span
+                style="margin-left: 5px;">域名:$domain</span>
+        </a>
+        <i class="glyphicon glyphicon-floppy-saved"></i><span
+            style="margin-left: 5px;">收录量:$totalCount</span>
+        <i class="glyphicon glyphicon-th-list"></i><span
+            style="margin-left: 5px;" id="secondIndex"></span>
+    </div>
+</div>
+
+<div class="wrapper" style="margin-top: 10px;margin-bottom: 10px;">
+    <svg height="642">
+
+    </svg>
+</div>
+<script type="text/javascript">
+    var root =$root;
+    var domain=$esc.javascript($domain);
+</script>
+<script src="/static/js/website/base.js"></script>
+<script src="/static/js/website/d3.js"></script>
+<script src="/static/js/website/tree.js"></script>

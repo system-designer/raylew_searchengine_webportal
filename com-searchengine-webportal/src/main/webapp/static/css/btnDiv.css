@@ -1,0 +1,16 @@
+.btnDiv {
+    float:right;
+    margin-top: 72px;
+    height: 125px;
+}
+.btnDiv button{
+    margin-left: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#btndiv{
+    margin-left: 15px;
+    font-size: 14px;
+    text-align: center;
+}

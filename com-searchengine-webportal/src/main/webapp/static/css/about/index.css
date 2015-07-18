@@ -1,0 +1,338 @@
+body {
+    font: 14px "Microsoft YaHei", Helvetia, "lucida Grande", Verdana, Arial;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f7f7f7;
+
+}
+
+body a {
+    text-decoration: none;
+}
+
+/*
+ *the content container
+ */
+.container {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 1;
+}
+
+.container:before {
+    display: table;
+    content: "";
+}
+
+.container:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+/*
+ *mainbanner area
+ */
+.mainbanner {
+    width: 100%;
+    height: 725px;
+    background-color: #2d6987;
+    background: url(/static/img/about/zhutu.jpg) no-repeat 0 0;
+    border-bottom: 1px solid #77cde5;
+    background-position: center bottom;
+    background-size: 100% 100%;
+}
+
+/*logo*/
+.logo {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    outline: 0;
+    background-image: url(/static/img/logo.png);
+    background-repeat: no-repeat;
+}
+
+/*topbar area*/
+.topbar {
+    height: 60px;
+    /*border-bottom: 2px solid #fff;*/
+}
+
+/**/
+.mainbanner-content {
+    height: 365px;
+    /*background-image: url(/static/img/about/mainbanner_img.png);*/
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.topbar .logo {
+    float: left;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.topbar-right {
+    float: right;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 25px;
+    padding-top: 2px;
+    padding-bottom: -1px;
+}
+
+.topbar-right-item .first {
+    border-left: 1px solid #d0d0d0;
+}
+
+.first a {
+    color: #ffffff;
+}
+
+.first a:hover {
+    color: #bfe7ff;
+}
+
+.topbar-right-item:hover {
+    color: #bfe7ff;
+}
+
+.topbar-right-item {
+    float: left;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.topbar-right-item .common {
+    border-right: 1px solid #d0d0d0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nolist {
+    list-style: none;
+}
+
+/*the begin button-img*/
+.mainbanner-action {
+    margin-top: 160px;
+    height: 70px;
+    text-align: center;
+}
+
+.btn-action {
+    cursor: pointer;
+    display: inline-block;
+    width: 262px;
+    height: 59px;
+    /*background-image: url(/static/css/homepage-img/ljzc-1.png);*/
+    background-image: url(/static/img/about/jqqun-1.png);
+    background-repeat: no-repeat;
+    outline: none;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-action:hover {
+    /*background-image: url(/static/css/homepage-img/ljzc-2.png);*/
+    background-image: url(/static/img/about/jqqun-2.png);
+}
+
+.text-hide {
+    text-indent: -9999em;
+    text-indent: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+/*show case area*/
+.showcase-list {
+    margin-top: 44px;
+}
+
+/**
+ * #showcase 三列的大展示模块，参考首页
+ * @html .showcase > .showcase-item > .showcase-title + .showcase-intro
+ */
+.showcase {
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 0;
+}
+
+.showcase-title {
+    display: block;
+    font-size: 22px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.showcase-item {
+    display: inline-block;
+    float: left;
+    width: 290px;
+    margin-bottom: 60px;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.left {
+    margin-left: 55px;
+}
+
+.showcase-left {
+    color: #e0b609;
+}
+
+.leftbackimg {
+    background-image: url(/static/img/about/jxms.png);
+}
+
+.showcase-middle {
+    color: #4499b3;
+}
+
+.middlebackimg {
+    background-image: url(/static/img/about/jiandan.png);
+}
+
+.showcase-right {
+    color: #ea6a6a;
+}
+
+.rightbackimg {
+    background-image: url(/static/img/about/youya.png);
+}
+
+.showcase-item-up {
+    height: 200px;
+    border: 1px dashed #e5e5e5;
+    text-align: center;
+}
+
+.showcase-item-img {
+    display: inline-block;
+    zoom: 1;
+    margin-top: 20px;
+    width: 141px;
+    height: 129px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.showcase-intro {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 0px 0px 0px 0px;
+}
+
+.showcase-item-note {
+    display: block;
+    margin-top: 19px;
+    padding: 0px 0px 0px 0px;
+    font-size: 13px;
+    color: #333333;
+}
+
+/*changelog area
+*/
+.changelog-list {
+    margin-top: 30px;
+    margin-bottom: 120px;
+}
+
+.changelog-title {
+    font-size: 22px;
+    color: #333333;
+}
+
+.whiteboard {
+    margin-top: 20px;
+    border: 1px solid #e8e8e8;
+    background-color: #fff;
+    border-bottom: none;
+}
+
+.log-header {
+    font-size: 16px;
+    overflow: hidden; /**  避免伸缩所引起的其他元素的布局塌陷  **/
+}
+
+.log-header:hover {
+    cursor: pointer;
+}
+
+.border-bottom-toggle {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.log-name {
+    display: block;
+    float: left;
+    padding: 17px 5px 10px 17px;
+    color: #000000;
+}
+
+.text-red {
+    color: #ff0000;
+}
+
+.log-time {
+    display: block;
+    float: right;
+    padding: 17px 17px 10px 5px;
+    font-style: italic;
+    color: #999999;
+}
+
+.log-detail {
+    padding-top: 20px;
+    padding-left: 25px;
+    color: #4c4c4c;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.log-detail-outer {
+    display: none;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/*footer area*/
+/**
+ * #footer 底部页脚
+ */
+.footer {
+    width: 100%;
+    text-align: center;
+    background-color: #e5e5e5;
+    color: #333333;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #EF5E48;
+}
+
+.footer-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.header-one {
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}

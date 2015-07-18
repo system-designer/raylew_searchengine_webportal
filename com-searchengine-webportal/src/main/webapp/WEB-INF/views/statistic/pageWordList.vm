@@ -1,0 +1,78 @@
+#set($layout = "layout/layout.vm")
+#parse("layout/layout_statistic.vm")
+
+<div clas="container">
+    <div style="margin-top: 30px;">
+        <table class="table table-striped row-border">
+            <thead>
+            <tr class="row-border" >
+                <th style="font-size:16px;width:25%;">url</th>
+                <th style="font-size:16px;width:25%;">标题</th>
+                <th style="font-size:16px;width:10%;">关键字</th>
+                <th style="font-size:16px;width:10%;">位置</th>
+                <th style="font-size:16px;width:10%;">tf-idf</th>
+                <th style="font-size:16px;width:10%;">操作</th>
+            </tr>
+            </thead>
+            <tbody >
+                #foreach($pageWord in $pageWordList)
+                <tr>
+                    <td class="field-color" style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px" >
+                        <a target="_blank" href="$esc.html(${pageWord.url})">$esc.html(${pageWord.url})</a>
+                    </td>
+                    <td class="field-color" style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px" >
+                        $esc.html(${pageWord.title})
+                    </td>
+                    <td class="field-color" style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px" >
+                        $esc.html(${pageWord.name})
+                    </td>
+                    <td class="status" style="font-size:13px">
+                        $esc.html(${pageWord.position})
+                    </td>
+                    <td class="field-color" style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px" >
+                        $esc.html(${pageWord.tfidf})
+                    </td>
+                    <!-- operation -->
+                    <td class="control-container" onmouseover="this.style.cursor='pointer'" style="font-size:13px">
+                        <a target="_blank" href="/query/fastGraph?filePath=${pageWord.savePath}&fileCharset=${pageWord.charset}">快照</a>
+                    </td>
+                </tr>
+                #end
+            </tbody>
+        </table>
+        #if($pageCount > 1)
+            #set($start = 1)
+            #if($pageIndex > 3)
+                #set($start = $pageIndex - 3)
+            #end
+            #set($end = $start + 9)
+            #if($end > $pageCount)
+                #set($end = $pageCount)
+            #end
+            <div class="text-right">
+                <nav>
+                    <ul class="pagination pagination-sm">
+                        #if($pageIndex > 1)
+                            #set($prev = $pageIndex - 1)
+                            <li><a href="?pageIndex=$prev&pageSize=10" title="上一页">&laquo;</a></li>
+                        #end
+                        #foreach($page in [$start..$end])
+                            #set($active="")
+                            #if($page == $pageIndex)
+                                #set($active = "class='active'")
+                            #end
+                            <li $active><a href="?pageIndex=$page&pageSize=10">$page</a></li>
+                        #end
+                        #if($pageIndex < $pageCount)
+                            #set($next = $pageIndex + 1)
+                            <li><a href="?pageIndex=$next&pageSize=10" title="下一页">&raquo;</a></li>
+                        #end
+                    </ul>
+                </nav>
+            </div>
+        #end
+        <div id="result">
+            <div id="resultMsg" style="font-size:14px;padding:5px;line-height: 22px;"></div>
+        </div>
+    </div>
+</div>

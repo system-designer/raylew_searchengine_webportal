@@ -1,0 +1,17 @@
+#set($layout = "layout/layout.vm")
+#set($header = "<link href='/static/css/reg.css' rel='stylesheet'>")
+
+<form class="form-signin" role="form" method="post" action="/account/register">
+    <h2 class="form-signin-heading">注册爱搜</h2>
+    <input type="text" class="form-control" name="uname" placeholder="请输入用户名" required autofocus>
+    <input type="text" class="form-control" name="email" placeholder="请输入邮箱" required autofocus>
+    <input type="password" class="form-control" name="pwd" placeholder="请输入密码" required>
+    <input type="password" class="form-control" name="pwd1" placeholder="请再输入密码" required>
+
+    <div class="checkbox">
+        <label>
+            $!{msg}
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
+</form>

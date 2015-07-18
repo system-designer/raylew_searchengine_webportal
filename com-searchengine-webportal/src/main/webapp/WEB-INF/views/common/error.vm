@@ -1,0 +1,7 @@
+#set($layout = "layout/layout.vm")
+
+<div class="container">
+    <center>
+        <img src="/static/img/404.jpg" alt="爱搜,网页不存在"/>
+    </center>
+</div>

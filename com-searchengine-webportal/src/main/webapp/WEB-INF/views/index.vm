@@ -1,0 +1,84 @@
+#set($layout = "layout/layout.vm")
+<link href="/static/css/query/list.css" rel="stylesheet"/>
+<style type="text/css">
+    #record.recording {
+        background: red;
+        background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%, lightgrey 75%, lightgrey 100%, #7db9e8 100%);
+        background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%, lightgrey 75%, lightgrey 100%, #7db9e8 100%);
+        background: radial-gradient(center, ellipse cover, #ff0000 0%, lightgrey 75%, lightgrey 100%, #7db9e8 100%);
+    }
+</style>
+<div class="container">
+    <form id="search_form" action="/query/list" name="search" method="POST">
+        <table border="0" height="30px" align="center">
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input class="form-control" name="queryContent" type="text" size="50" id="queryContent"
+                               placeholder="爱搜-更好的搜索，更好的自己" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" style="background-color:#ffffff;"
+                              onclick="showVoiceDialog()"><img src="/static/img/mic128.png" height="20"
+                                                               width="20"/></span>
+                    </div>
+                </td>
+                <td height="50" align="center">
+                    <input height="50" class="btn btn-primary btn-md" style="font-weight: bold" type="submit"
+                           value="搜索一下" id="search">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--语音搜索Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-title" id="myModalLabel"><img src="/static/img/mic128.png" height="20"
+                                                                width="20"/><b>爱搜-语音搜索</b>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="viz">
+                    <canvas id="analyser" width="1024" height="500"></canvas>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <center>
+                    <button type="button" class="btn btn-primary" onclick="startRecording(this);">
+                        record
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="stopRecording(this);" disabled>stop</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<!--语音识别开始-->
+<div style="display: none;">
+    <h1>Recorder.js simple WAV export example</h1>
+
+    <p>Make sure you are using a recent version of Google Chrome.</p>
+
+    <p>Also before you enable microphone input either plug in headphones or turn the volume down if you want to avoid
+        ear
+        splitting feedback!</p>
+
+    <button onclick="startRecording(this);">record</button>
+    <button onclick="stopRecording(this);" disabled>stop</button>
+
+    <h2>Recordings</h2>
+    <ul id="recordingslist"></ul>
+
+    <h2>Log</h2>
+    <pre id="log"></pre>
+</div>
+
+<script src="/static/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/static/js/query/recorder.js"></script>
+<script src="/static/js/query/main.js"></script>
+<script src="/static/js/query/audiodisplay.js"></script>
+<script src="/static/js/query/queryByVoice.js"></script>

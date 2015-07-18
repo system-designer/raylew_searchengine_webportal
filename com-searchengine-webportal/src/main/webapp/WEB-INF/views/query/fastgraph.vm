@@ -1,0 +1,13 @@
+<style type="text/css">
+    .row-border {
+        border-bottom: 2px solid #c6c6c6;
+    }
+
+    .list-inline a.red {
+        font-size: 14.8px;
+        color: #ff0000;
+    }
+</style>
+<div class="container">
+    $htmlContent
+</div>

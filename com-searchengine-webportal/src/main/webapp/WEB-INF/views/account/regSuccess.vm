@@ -1,0 +1,21 @@
+#set($layout = "layout/layout.vm")
+
+<br/><br/><br/>
+<div class="alert alert-success">
+    <div class="alert alert-success">
+        <br>
+        <a href="/account/login" class="alert-link">恭喜您，注册成功！系统将在5s后跳转到首页...</a>
+        <br><br>
+        <a href="/account/login" class="alert-link">如果长时间没有跳转，请单击此处登录</a>
+        <br>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        setTimeout(forward(), 5 * 1000);
+    })
+
+    function forward() {
+        this.location.href = "/index";
+    }
+</script>

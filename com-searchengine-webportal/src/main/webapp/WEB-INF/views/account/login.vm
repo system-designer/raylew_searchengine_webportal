@@ -1,0 +1,14 @@
+#set($layout = "layout/layout.vm")
+#set($header = "<link href='/static/css/reg.css' rel='stylesheet'>")
+
+<form class="form-signin" method="post" role="form">
+    <h2 class="form-signin-heading">登录爱搜</h2>
+    <input type="text" class="form-control" name="uname" placeholder="请输入用户名" required autofocus>
+    <input type="password" class="form-control" name="pwd" placeholder="请输入密码" required>
+    <div class="checkbox">
+        <label>
+            $!{msg}
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">立即登录</button>
+</form>

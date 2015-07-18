@@ -1,0 +1,105 @@
+#set($layout = "layout/layout.vm")
+
+<div clas="container">
+    <div class="container" style="margin-top: 10px;">
+        <div class="col-md-6" style="margin-top: 15px;">
+            <a href="/website/webpagelist?domain=$domain&pageIndex=1&pageSize=20&count=$totalCount">
+                <i class="glyphicon glyphicon-hand-right"></i><span
+                    style="margin-left: 5px;">域名:$domain</span>
+            </a>
+            <i class="glyphicon glyphicon-floppy-saved"></i><span
+                style="margin-left: 5px;">收录量:$totalCount</span></div>
+        <div class="col-md-6 text-right">
+            <a class="btn btn-primary btn-md" style="font-weight: bold"
+               href="/website/structure?domain=$domain&totalCount=$totalCount">
+                <i class='glyphicon glyphicon-folder-open'></i> 结构分析
+            </a></div>
+    </div>
+    <div style="margin-top: 30px;">
+        <table class="table table-striped row-border">
+            <thead>
+            <tr class="row-border">
+                <th style="font-size:16px;width:25%;">url</th>
+                <th style="font-size:16px;width:25%;">标题</th>
+                <th style="font-size:16px;width:10%;">域名</th>
+                <th style="font-size:16px;width:10%;">收录时间</th>
+                <th style="font-size:16px;width:15%;">相对存储位置</th>
+                <th style="font-size:16px;width:5%;">编码</th>
+                <th style="font-size:16px;width:10%;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach($webPage in $webPageList)
+                <tr>
+                    <td class="field-color"
+                        style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px">
+                        <a target="_blank" href="$esc.html(${webPage.url})">$esc.html(${webPage.url})</a>
+                    </td>
+                    <td class="field-color"
+                        style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px">
+                        $esc.html(${webPage.title})
+                    </td>
+                    <td class="field-color"
+                        style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px">
+                        $esc.html(${webPage.rootDomain})
+                    </td>
+                    <td class="status" style="font-size:13px">
+                        $esc.html(${webPage.createdTime})
+                    </td>
+                    <td class="field-color"
+                        style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px">
+                        $esc.html(${webPage.savePath})
+                    </td>
+                    <td class="field-color"
+                        style="font-size:13px;text-align: left;padding-left: 20px;padding-right: 20px">
+                        $esc.html(${webPage.charset})
+                    </td>
+                    <!-- operation -->
+                    <td class="control-container" onmouseover="this.style.cursor='pointer'" style="font-size:13px">
+                        <a target="_blank"
+                           href="/query/fastGraph?filePath=${webPage.savePath}&fileCharset=${webPage.charset}">快照</a>
+                    </td>
+                </tr>
+                #end
+            </tbody>
+        </table>
+        #if($pageCount > 1)
+            #set($start = 1)
+            #if($pageIndex > 3)
+                #set($start = $pageIndex - 3)
+            #end
+            #set($end = $start + 9)
+            #if($end > $pageCount)
+                #set($end = $pageCount)
+            #end
+            <div class="text-right">
+                <nav>
+                    <ul class="pagination pagination-sm">
+                        #if($pageIndex > 1)
+                            #set($prev = $pageIndex - 1)
+                            <li><a href="?domain=$domain&pageIndex=$prev&pageSize=10&count=$totalCount"
+                                   title="上一页">&laquo;</a></li>
+                        #end
+                        #foreach($page in [$start..$end])
+                            #set($active="")
+                            #if($page == $pageIndex)
+                                #set($active = "class='active'")
+                            #end
+                            <li $active><a
+                                    href="?domain=$domain&pageIndex=$page&pageSize=10&count=$totalCount">$page</a></li>
+                        #end
+                        #if($pageIndex < $pageCount)
+                            #set($next = $pageIndex + 1)
+                            <li><a href="?domain=$domain&pageIndex=$next&pageSize=10&count=$totalCount"
+                                   title="下一页">&raquo;</a></li>
+                        #end
+                    </ul>
+                </nav>
+            </div>
+        #end
+        <div id="result">
+            <div id="resultMsg" style="font-size:14px;padding:5px;line-height: 22px;"></div>
+        </div>
+    </div>
+</div>
+
